@@ -69,7 +69,7 @@ export function Stat({ label, value, hint, tone }: { label: string; value: strin
   return (
     <div className="rounded-lg border bg-card p-5">
       <div className="text-xs uppercase tracking-wider text-muted-foreground">{label}</div>
-      <div className={cn("mt-2 font-mono text-2xl font-semibold", tone === "good" && "text-success", tone === "bad" && "text-destructive", tone === "muted" && "text-muted-foreground")}>{value}</div>
+      <div className={cn("mt-2 font-mono font-semibold", value.length > 14 ? "text-lg" : "text-2xl", tone === "good" && "text-success", tone === "bad" && "text-destructive", tone === "muted" && "text-muted-foreground")}>{value}</div>
       {hint && <div className="mt-1 text-xs text-muted-foreground">{hint}</div>}
     </div>
   );

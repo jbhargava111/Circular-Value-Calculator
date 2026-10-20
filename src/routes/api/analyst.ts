@@ -14,7 +14,7 @@ RULES:
 - All figures are estimates, not actual results. Say so.
 - If inputs are missing, ask targeted follow-up questions.
 - Use what-if overrides only when the user asks a hypothetical; state that it is a hypothetical.
-- Be concise; use short markdown with bullets. Currency is given in the program.`;
+- Be concise; use short markdown with headings, bullets and bold only — never tables. Currency is given in the program.`;
 
 const overrideSchema = z.object({
   overrides: z

@@ -35,8 +35,8 @@ export const SAMPLE_INPUTS: ProgramInputs = {
   refurbCostPerDevice: 28,
   recyclingCostPerDevice: 2,
   platformFeePerDevice: 4,
-  partnerRevenueSharePct: 15,
-  partnerIncentiveFundingPct: 50,
+  partnerRevenueSharePct: 25,
+  partnerIncentiveFundingPct: 30,
   fixedCosts: 40000,
   env: { ...emptyEnv(), deviceWeightKg: 0.19, notes: "Illustrative weight. Emissions factors intentionally left blank until a sourced LCA value is entered." },
 };
