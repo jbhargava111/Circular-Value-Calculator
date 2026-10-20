@@ -407,8 +407,8 @@ export function compareProgramScenarios(p: ProgramInputs, scenarios: ScenarioAdj
     return { label: s.label, adjustments: s, economics: calculateProgramEconomics(q), circularity: calculateCircularityMetrics(q), environment: calculateEnvironmentalImpact(q) };
   });
   // Driver attribution: swing between the first (low) and last (high) scenario, one assumption at a time.
-  const lo = scenarios[0];
-  const hi = scenarios[scenarios.length - 1];
+  const lo = scenarios[0]!;
+  const hi = scenarios[scenarios.length - 1]!;
   const neutral: ScenarioAdjustments = { label: "", resalePriceMultiplier: 1, eligibleRateDeltaPts: 0, resoldRateDeltaPts: 0, costMultiplier: 1, volumeMultiplier: 1 };
   const keys: [keyof ScenarioAdjustments, string][] = [
     ["resalePriceMultiplier", "Resale price"],

@@ -5,7 +5,7 @@ export interface SavedProgram {
   inputs: ProgramInputs;
   scenarios: ScenarioAdjustments[];
   updatedAt: string;
-  illustrative?: boolean;
+  illustrative?: boolean | undefined;
 }
 
 export const emptyEnv = (): ProgramInputs["env"] => ({

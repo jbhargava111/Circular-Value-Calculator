@@ -33,7 +33,7 @@ const SUGGESTED = [
   "Generate a decision memo",
 ];
 
-interface Msg { role: "user" | "assistant"; content: string; mode?: "llm" | "rule-based"; log?: ToolLogEntry[]; error?: boolean }
+interface Msg { role: "user" | "assistant"; content: string; mode?: "llm" | "rule-based"; log?: ToolLogEntry[] | undefined; error?: boolean }
 
 function AnalystPage() {
   const { active } = useProgramStore();
