@@ -10,11 +10,47 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AnalystRouteImport } from './routes/analyst'
+import { Route as CalculatorRouteImport } from './routes/calculator'
+import { Route as ProgramsRouteImport } from './routes/programs'
+import { Route as ReportRouteImport } from './routes/report'
+import { Route as ScenariosRouteImport } from './routes/scenarios'
+import { Route as TestsRouteImport } from './routes/tests'
 import { Route as ApiAnalystRouteImport } from './routes/api/analyst'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalystRoute = AnalystRouteImport.update({
+  id: '/analyst',
+  path: '/analyst',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CalculatorRoute = CalculatorRouteImport.update({
+  id: '/calculator',
+  path: '/calculator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramsRoute = ProgramsRouteImport.update({
+  id: '/programs',
+  path: '/programs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportRoute = ReportRouteImport.update({
+  id: '/report',
+  path: '/report',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScenariosRoute = ScenariosRouteImport.update({
+  id: '/scenarios',
+  path: '/scenarios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TestsRoute = TestsRouteImport.update({
+  id: '/tests',
+  path: '/tests',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiAnalystRoute = ApiAnalystRouteImport.update({
@@ -25,27 +61,76 @@ const ApiAnalystRoute = ApiAnalystRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/analyst': typeof AnalystRoute
+  '/calculator': typeof CalculatorRoute
+  '/programs': typeof ProgramsRoute
+  '/report': typeof ReportRoute
+  '/scenarios': typeof ScenariosRoute
+  '/tests': typeof TestsRoute
   '/api/analyst': typeof ApiAnalystRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/analyst': typeof AnalystRoute
+  '/calculator': typeof CalculatorRoute
+  '/programs': typeof ProgramsRoute
+  '/report': typeof ReportRoute
+  '/scenarios': typeof ScenariosRoute
+  '/tests': typeof TestsRoute
   '/api/analyst': typeof ApiAnalystRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/analyst': typeof AnalystRoute
+  '/calculator': typeof CalculatorRoute
+  '/programs': typeof ProgramsRoute
+  '/report': typeof ReportRoute
+  '/scenarios': typeof ScenariosRoute
+  '/tests': typeof TestsRoute
   '/api/analyst': typeof ApiAnalystRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/api/analyst'
+  fullPaths:
+    | '/'
+    | '/analyst'
+    | '/calculator'
+    | '/programs'
+    | '/report'
+    | '/scenarios'
+    | '/tests'
+    | '/api/analyst'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/api/analyst'
-  id: '__root__' | '/' | '/api/analyst'
+  to:
+    | '/'
+    | '/analyst'
+    | '/calculator'
+    | '/programs'
+    | '/report'
+    | '/scenarios'
+    | '/tests'
+    | '/api/analyst'
+  id:
+    | '__root__'
+    | '/'
+    | '/analyst'
+    | '/calculator'
+    | '/programs'
+    | '/report'
+    | '/scenarios'
+    | '/tests'
+    | '/api/analyst'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AnalystRoute: typeof AnalystRoute
+  CalculatorRoute: typeof CalculatorRoute
+  ProgramsRoute: typeof ProgramsRoute
+  ReportRoute: typeof ReportRoute
+  ScenariosRoute: typeof ScenariosRoute
+  TestsRoute: typeof TestsRoute
   ApiAnalystRoute: typeof ApiAnalystRoute
 }
 
@@ -56,6 +141,48 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analyst': {
+      id: '/analyst'
+      path: '/analyst'
+      fullPath: '/analyst'
+      preLoaderRoute: typeof AnalystRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/calculator': {
+      id: '/calculator'
+      path: '/calculator'
+      fullPath: '/calculator'
+      preLoaderRoute: typeof CalculatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programs': {
+      id: '/programs'
+      path: '/programs'
+      fullPath: '/programs'
+      preLoaderRoute: typeof ProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/report': {
+      id: '/report'
+      path: '/report'
+      fullPath: '/report'
+      preLoaderRoute: typeof ReportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/scenarios': {
+      id: '/scenarios'
+      path: '/scenarios'
+      fullPath: '/scenarios'
+      preLoaderRoute: typeof ScenariosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tests': {
+      id: '/tests'
+      path: '/tests'
+      fullPath: '/tests'
+      preLoaderRoute: typeof TestsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/analyst': {
@@ -70,6 +197,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AnalystRoute: AnalystRoute,
+  CalculatorRoute: CalculatorRoute,
+  ProgramsRoute: ProgramsRoute,
+  ReportRoute: ReportRoute,
+  ScenariosRoute: ScenariosRoute,
+  TestsRoute: TestsRoute,
   ApiAnalystRoute: ApiAnalystRoute,
 }
 export const routeTree = rootRouteImport
