@@ -36,7 +36,7 @@ const ENV_FIELDS: { key: keyof ProgramInputs["env"]; label: string; unit: string
 
 const parse = (s: string): Num => (s.trim() === "" ? null : Number(s));
 
-function NumField({ label, unit, value, onChange, issue }: { label: string; unit: string; value: Num; onChange: (v: Num) => void; issue?: { severity: string; message: string } }) {
+function NumField({ label, unit, value, onChange, issue }: { label: string; unit: string; value: Num; onChange: (v: Num) => void; issue?: { severity: string; message: string } | undefined }) {
   return (
     <label className="block">
       <span className="text-sm font-medium">{label}</span>

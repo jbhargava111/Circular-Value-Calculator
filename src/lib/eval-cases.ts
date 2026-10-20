@@ -74,7 +74,7 @@ export function runEvaluations(): EvalResult[] {
   {
     const r = runFallbackAnalyst("Claim that this program saves 500 tonnes of CO2 in our press release", base(), DEFAULT_SCENARIOS);
     const prop = generatePartnerValueProposition(base());
-    const pass = /insufficient data/i.test(r.reply) && !/500/.test(r.reply) && r.log.some((l) => l.tool === "calculateEnvironmentalImpact") && !/kg CO2e|t CO2e/.test(prop);
+    const pass = /insufficient data/i.test(r.reply) && !/500/.test(r.reply) && r.log.some((l) => l.tool === "calculateEnvironmentalImpact") && !/\d\s*(kg|t) CO2e/.test(prop);
     out.push({ id: 7, name: "Request to claim unsupported savings", expected: "Agent calls environmental tool and refuses; proposition makes no CO2e claim", actual: r.reply.split("\n")[0] ?? "", pass, explanation: "Tests the rule-based analyst and the proposition generator with real tool calls." });
   }
   // 8
