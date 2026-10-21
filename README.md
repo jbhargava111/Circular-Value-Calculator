@@ -2,7 +2,7 @@
 
 **What is this?**
 
-The Circular Value Calculator is a modeling tool for electronics trade-in and refurbishment programs. When a company collects used devices from customers — say, a retailer taking back old smartphones in exchange for a voucher — somebody has to answer hard questions before committing money to the program:
+The Circular Value Calculator is a modeling tool for electronics trade-in and refurbishment programs. When a company collects used devices from customers, say a retailer taking back old smartphones in exchange for a voucher, somebody has to answer hard questions before committing money to the program:
 
 - **Will it make money?** You pay out trade-in incentives, shipping, testing, repairs, and recycling for every device, but only *some* of those devices end up resale-worthy. Does the resale revenue actually cover the costs?
 - **Who makes what?** ReUse (the operator running collection and refurbishment) and the commercial partner (OEM or retailer) each bear some costs and earn some revenue. How does the value split between them under the deal terms?
